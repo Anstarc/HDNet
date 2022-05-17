@@ -1,0 +1,7 @@
+tensorboardX
+mmcv
+tqdm
+nvidia-ml-py3
+scikit-image
+prefetch_generator
+kornia
