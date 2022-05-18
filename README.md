@@ -17,35 +17,25 @@ A deep neural network with attention mechanism for semantic segmentation task.
 
 &nbsp;
 
-### Requirements
+## Requirements
 - Install [PASCAL in Detail](https://sites.google.com/view/pasd/dataset)
 - Install `requirements.txt`
 
-&nbsp;
-
-### How to use
-
+## How to use
 - To train HDNet:
 ```bash
-python train.py 
+python train.py --dataset pcontext_detail --out_dir /out_dir --pretrained_home /pretrained_home --data-folder /data-folder 
 ```
 The model and log are saved in `--out_dir`
 
-&nbsp;
-
 - To test HDNet:
 ```bash
-python test.py
-```
-&nbsp;
+python test.py --dataset pcontext_detail --resume-dir /resume-dir --data-folder /data-folder --pretrained_home /pretrained_home --eval --multi-scales
 
-- To get the visual results:
-```bash
-python vis.py
 ```
 
 &nbsp;
-### Citation
+## Citation
 if you find HDNet useful in your research, please consider citing:
 
 ```
@@ -60,5 +50,5 @@ if you find HDNet useful in your research, please consider citing:
 }
 ```
 
-### Acknowledgement
+## Acknowledgement
 Thanks for [DANet](https://github.com/junfu1115/DANet), [PyTorch-Encoding](https://github.com/zhanghang1989/PyTorch-Encoding), [timm](https://github.com/rwightman/pytorch-image-models)

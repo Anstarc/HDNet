@@ -1,6 +1,5 @@
 # ======================================
 # File: deeplabv3p.py
-# Create time: 2020/12/12
 # Author: Chunpeng Li
 # Email: chunpeng.li@bupt.edu.cn
 # ======================================

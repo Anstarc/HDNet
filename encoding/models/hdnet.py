@@ -66,17 +66,16 @@ def get_channels(backbone):
 
 class HDNet(BaseNet):
 
-    def __init__(self, nclass, backbone, aux=False, se_loss=False, norm_layer=nn.BatchNorm2d, eval=False, skin=False, skin_fine_tune=False,
+    def __init__(self, nclass, backbone, aux=False, se_loss=False, norm_layer=nn.BatchNorm2d, eval=False, skin=False, ft=True,
                  **kwargs):
 
         super(HDNet, self).__init__(nclass, backbone, aux, se_loss, norm_layer=norm_layer, **kwargs)
         self.evaluation = eval
         self.aux = aux
         self.skin = skin
+        self.ft = ft
         if self.skin:
             self.edge = True
-        if skin_fine_tune:
-            nclass = 4
 
         all_channels = get_channels(backbone)
         channels = all_channels[1:]
@@ -110,8 +109,7 @@ class HDNet(BaseNet):
         else:
             self.head = Attention(all_channels[0], nclass, norm_layer)
 
-
-        if try_case.fine_tune:
+        if self.skin and self.ft:
             self.criterion = SegmentationMultiLosses(nclass=nclass, weight=torch.FloatTensor([1,1.5,1.5,2]))
 
         self._init_weight()

@@ -1,6 +1,5 @@
 # ======================================
 # File: emanet.py
-# Create time: 2020/7/28
 # Author: Chunpeng Li
 # Email: chunpeng.li@bupt.edu.cn
 # ======================================

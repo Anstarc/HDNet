@@ -1,6 +1,5 @@
 # ======================================
 # File: ccnet.py
-# Create time: 2020/7/29
 # Author: Chunpeng Li
 # Email: chunpeng.li@bupt.edu.cn
 # ======================================
